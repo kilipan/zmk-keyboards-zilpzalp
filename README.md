@@ -17,15 +17,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: grassfedreeve
-      url-base: https://github.com/grassfedreeve
+    - name: kilipan
+      url-base: https://github.com/kilipan
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-keyboards-akohekohe
-      remote: grassfedreeve
+    - name: zmk-keyboards-zilpzalp
+      remote: kilipan
       revision: main
   self:
     path: config
@@ -33,6 +33,15 @@ manifest:
 
 - Once you have the module added to your west.yml you can then build firmware as if it was in your config's shield directory or in ZMK main.
 - create a zilpzalp.keymap file to add your own keymap, likewise a zilpzalp.conf to modify the configuration
+- add zilpzalp to your build.yaml
+```
+---
+include:
+  - board: seeeduino_xiao_rp2040
+    shield: zilpzalp
+  - board: seeeduino_xiao_ble
+    shield: zilpzalp_ble
+```
 - adjust the zilpzalp.keymap file (find all the keycodes on [the zmk docs pages](https://zmk.dev/docs/codes/))
 - `git push` to your repo or save if using GitHub ui
 - on the GitHub page of your fork navigate to "Actions"

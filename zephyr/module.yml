@@ -1,6 +1,3 @@
-# Delete all unused properties.
-
-# Give your module a name
 name: zmk-keyboards-zilpzalp
 build:
   settings:
